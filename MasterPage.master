@@ -14,15 +14,16 @@
         <div>
             <asp:LoginView ID="LoginView1" runat="server">
                 <AnonymousTemplate>
-                    <asp:HyperLink ID="GoToRegister"
-                        NavigateUrl="~\Register.aspx"
-                        runat="server">Sign Up</asp:HyperLink>
+                    <asp:Login runat="server"
+                        CreateUserText="Register"
+                        CreateUserUrl="~\Register.aspx"></asp:Login>
                 </AnonymousTemplate>
                 <LoggedInTemplate>
+                    Signed in as <asp:LoginName ID="LoginName" runat="server" />!<br/>
                     <asp:HyperLink ID="GoToProfilePage"
-                        NavigateUrl = "~\UserProfile.aspx"
+                        NavigateUrl = "~\UpdateProfile.aspx"
                         runat="server">Profile</asp:HyperLink>
-                </LoggedInTemplate>
+                    <asp:LoginStatus ID="LoginStatus" runat="server"/>                </LoggedInTemplate>
             </asp:LoginView>    
         </div>
         <div>
